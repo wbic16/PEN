@@ -1,0 +1,7 @@
+event: census
+seat: N
+at: 2026-11-23T00:28:48-06:00
+ee: 210
+node: aletheia-core
+entries: 255
+note: registry rebuilt from live census; diff is the review
