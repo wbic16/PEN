@@ -19,6 +19,13 @@ State lives in phext files in the repo working copy:
   registry/<node>.phext  — the expected set (closed input set)
   register.phext         — append-only record of every PEN event
 
+Enrollment (Will, 2026-11-23): "auto-enroll all programs present upon
+first invocation." A host's registry is established by PEN's first
+invocation on that host — every program present at that moment is
+auto-enrolled as expected (the baseline), recorded as an `enroll`
+register event. No quarantine actions happen during an enrollment run.
+Only programs appearing AFTER the baseline are unexpected.
+
 Phext: scrolls separated by 0x17; each scroll is key: value lines.
 Coordinates are positional (scroll index), named in the scroll header.
 """
@@ -131,7 +138,8 @@ def systemctl_units(scope):
     return units
 
 # ---------- census (N) ----------
-def cmd_census(cfg):
+def build_registry_scrolls(cfg):
+    """Census the node and return (scrolls, entry_count) for its registry."""
     node = cfg["node"]
     procs = snapshot()
     exes = {}
@@ -155,7 +163,31 @@ def cmd_census(cfg):
     # PEN's own tools are expected by construction
     for tool in ("pen.py census", "pen.py watch", "pen.py audit"):
         add([("program", tool), ("kind", "pen"), ("user", cfg["owner"])] + stamp)
-    path = os.path.join(cfg["repo"], "registry", f"{node}.phext")
+    return scrolls, n
+
+def registry_path(cfg):
+    return os.path.join(cfg["repo"], "registry", f"{cfg['node']}.phext")
+
+def enrollment_recorded(cfg):
+    """True if the register already holds an enroll event for this node."""
+    reg = os.path.join(cfg["repo"], "register.phext")
+    for s in read_scrolls(reg):
+        d = parse_scroll(s)
+        if d.get("event") == "enroll" and d.get("node") == cfg["node"]:
+            return True
+    return False
+
+def append_enroll_event(cfg, entries, note):
+    reg = os.path.join(cfg["repo"], "register.phext")
+    return append_scroll(reg, scroll_text([
+        ("event", "enroll"), ("seat", "N"), ("at", iso_now()),
+        ("ee", str(ee_now())), ("node", cfg["node"]),
+        ("entries", str(entries)), ("note", note)]))
+
+def cmd_census(cfg):
+    node = cfg["node"]
+    scrolls, n = build_registry_scrolls(cfg)
+    path = registry_path(cfg)
     write_scrolls(path, scrolls)
     reg = os.path.join(cfg["repo"], "register.phext")
     idx = append_scroll(reg, scroll_text([
@@ -163,6 +195,11 @@ def cmd_census(cfg):
         ("node", node), ("entries", str(n)),
         ("note", "registry rebuilt from live census; diff is the review")]))
     print(f"census: {n} registry entries -> {path}; register scroll {idx}")
+    if not enrollment_recorded(cfg):
+        idx = append_enroll_event(cfg, n,
+            "auto-enrollment on first invocation (census): every program "
+            "present is enrolled as expected (Will, 2026-11-23)")
+        print(f"census: first invocation — enrollment recorded at register scroll {idx}")
 
 # ---------- watch (P) ----------
 def load_registry(cfg):
@@ -178,6 +215,34 @@ def load_registry(cfg):
 
 def cmd_watch(cfg):
     reg_path = os.path.join(cfg["repo"], "register.phext")
+    # Enrollment (Will, 2026-11-23): the first invocation on a host
+    # auto-enrolls every program present as the baseline. No registry
+    # yet -> this run IS the enrollment; no quarantine actions.
+    if not os.path.exists(registry_path(cfg)):
+        scrolls, n = build_registry_scrolls(cfg)
+        write_scrolls(registry_path(cfg), scrolls)
+        idx = append_enroll_event(cfg, n,
+            "auto-enrollment on first invocation: every program present "
+            "is enrolled as expected (Will, 2026-11-23)")
+        cyc = append_scroll(reg_path, scroll_text([
+            ("event", "watch-cycle"), ("seat", "P"), ("at", iso_now()),
+            ("ee", str(ee_now())), ("node", cfg["node"]),
+            ("unexpected", "0"),
+            ("note", "first invocation: auto-enrollment run; no quarantine "
+                     "actions; watching begins next cycle")]))
+        print(f"watch: no registry for {cfg['node']} — auto-enrolled {n} "
+              f"entries (register scroll {idx}); cycle recorded at scroll {cyc}")
+        return
+    # A registry that predates the enrollment rule (e.g. aletheia-core's
+    # v1 census registry) IS that host's first-invocation enrollment:
+    # record the marker retroactively, once, preserving register history.
+    if not enrollment_recorded(cfg):
+        n = len(read_scrolls(registry_path(cfg)))
+        idx = append_enroll_event(cfg, n,
+            "retroactive marker: this registry was established by the v1 "
+            "census (EE 210-212), which was this host's first invocation; "
+            "enrollment rule inscribed 2026-11-23 (Will)")
+        print(f"watch: retroactive enrollment marker recorded at register scroll {idx}")
     exes, _services = load_registry(cfg)
     mine = ancestor_pids()
     owner = cfg["owner"]

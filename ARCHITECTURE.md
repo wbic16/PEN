@@ -137,3 +137,24 @@ Operational reading (marked as reading, not as Will's words):
   warrior's watch extends to the seats themselves: a seat that will
   not answer, or that answers as something it is not, is behavior to
   be audited, like any other program on the node.
+
+## Enrollment — the baseline is the first invocation
+
+Ruled by Will Bickford, 2026-11-23 00:38 CST:
+
+> auto-enroll all programs present upon first invocation
+
+A host's registry is established by PEN's first invocation on that
+host: every program present at that moment is auto-enrolled as
+expected — that present set is the baseline. Enrollment is recorded
+in the register as an `enroll` event (host, timestamp, EE, entry
+count), and an enrollment run takes no quarantine actions. Only
+programs appearing *after* the baseline are unexpected and subject
+to record and quarantine.
+
+This generalizes how the first hub registry was in fact made: the
+v1 census of aletheia-core (EE 210–212) was that host's first
+invocation, and its 255-entry registry stands as its enrollment,
+marked retroactively in the register under this rule. Fleet rollout
+follows directly: install PEN on a node, and its first run enrolls
+that node's present set; watching begins from there.
