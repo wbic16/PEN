@@ -1,0 +1,8 @@
+[Unit]
+Description=PEN religious (E) — audit pass: verify, heal, report, publish
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/wbic16/PEN
+ExecStart=/usr/bin/python3 /home/wbic16/PEN/tools/pen.py audit --config /home/wbic16/PEN/config/pen.json

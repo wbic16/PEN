@@ -1,0 +1,8 @@
+[Unit]
+Description=PEN warrior (P) — watch cycle: live programs vs the registry
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/wbic16/PEN
+ExecStart=/usr/bin/python3 /home/wbic16/PEN/tools/pen.py watch --config /home/wbic16/PEN/config/pen.json
