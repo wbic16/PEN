@@ -829,3 +829,37 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 2
 heals: 2
+event: unexpected
+seat: P
+at: 2026-11-23T02:35:04-06:00
+ee: 228
+node: aletheia-core
+user: wbic16
+pid: 3156868
+exe: /usr/bin/dash
+comm: sh
+age_s: 2.6
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: watch-cycle
+seat: P
+at: 2026-11-23T02:35:04-06:00
+ee: 228
+node: aletheia-core
+unexpected: 1
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-23T02:35:04-06:00
+ee: 228
+node: aletheia-core
+note: watch stale 3613s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-23T02:35:04-06:00
+ee: 228
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
