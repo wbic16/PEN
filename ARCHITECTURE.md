@@ -1,24 +1,59 @@
 # PEN — Architecture
 
 *The three-party system. Ruled by Will Bickford, 2026-11-22 (MOAT chat),
-the day of PEN's founding. Companion to PEN.md in this repository.*
+the day of PEN's founding; the seats' functions ruled the same day.
+Companion to PEN.md in this repository.*
 
 > PEN: the service is built as a three-party system: worker, warrior, and
 > religious - the programs audit behavior on the node and on peers
 
-## The three seats
+## The three seats and their functions
 
-The service stands on three seats, and no seat stands alone:
+The head property, in Will's words: **the three support each other.**
+The letters are his: **P = warrior, E = religious, N = worker.**
 
-- **worker**
-- **warrior**
-- **religious**
+> the three support each other
+>
+> P: warrior is a fighter - it actively terminates programs that do not abide by the substrate owner's wishes - this is managed through a per-user program registry - any unexpected programs or shared libraries are automatically quarantined for review
+> E: religious is a healer - it keeps the other two running and audits the system for faults
+> N: worker is a builder - it actively develops new tools for the other two - an FDE
 
-Precedent: the same three seats were ruled for KGOAT (Will, 2026-11-21)
+- **P — warrior, the fighter.** It actively terminates programs that do
+  not abide by the substrate owner's wishes. This is managed through a
+  per-user program registry: any unexpected programs or shared libraries
+  are automatically quarantined for review.
+- **E — religious, the healer.** It keeps the other two running and
+  audits the system for faults.
+- **N — worker, the builder.** It actively develops new tools for the
+  other two — an FDE (forward deployed engineer).
+
+Lineage: the same three seats were ruled for KGOAT (Will, 2026-11-21)
 with the mapping **worker => phext-lattice, warrior => tluf, religious =>
-scrollspace**. That mapping is the precedent PEN's seats are read by.
-Any PEN-specific assignment of the seats beyond the sentence above is
-pending Will's word; this document invents none.
+scrollspace**. That mapping is lineage — the precedent the seat names
+descend from. The operative assignments in PEN are the functional ones
+above; they supersede the mapping as a reading of what the seats do.
+
+## Operational reading — the registry and the boundary
+
+Marked as reading, not as Will's words:
+
+- **The per-user program registry is the closed-input-set rule,
+  generalized.** The house rule (Will, 2026-11-22) is that a job's inputs
+  are declared in advance and the set is closed — no unexpected inputs
+  allowed: anything arriving that is not on the declaration is a defect,
+  not a surprise to be absorbed. The warrior's registry is that rule at
+  the scale of a whole substrate: a program or shared library that is
+  not in the owner's registry is an unexpected input, and the warrior's
+  automatic quarantine is the rule's enforcement arm. (Cf.
+  downloads.phext: a hash-less input is pinned trust-on-first-use, and
+  every later occurrence must match the pin; a mismatch is an unexpected
+  input.)
+- **Termination is bounded by ownership.** The warrior's termination
+  mandate runs on the substrate owner's own node, under the owner's own
+  registry. On peers, PEN watches and offers (principles 2–3); it does
+  not terminate another owner's programs. The fighter's authority stops
+  at the neighbor's door — principle 5: we sacrifice ourselves for the
+  greater good, never someone else.
 
 ## The audit doctrine
 
