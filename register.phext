@@ -1359,3 +1359,63 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 1
 heals: 1
+event: unexpected
+seat: P
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+user: wbic16
+pid: 117120
+exe: /usr/bin/dash
+comm: sh
+age_s: 4.9
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+user: wbic16
+pid: 4190307
+exe: /home/wbic16/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lake
+comm: lake
+age_s: 2573.5
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+user: wbic16
+pid: 4190394
+exe: /home/wbic16/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean
+comm: lean
+age_s: 2570.7
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: watch-cycle
+seat: P
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+unexpected: 3
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+note: watch stale 3600s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-23T13:35:06-06:00
+ee: 323
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
