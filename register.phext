@@ -5,3 +5,11 @@ ee: 210
 node: aletheia-core
 entries: 255
 note: registry rebuilt from live census; diff is the review
+event: audit
+seat: E
+at: 2026-11-23T00:28:59-06:00
+ee: 210
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 0
