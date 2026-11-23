@@ -92,3 +92,48 @@ Operational reading (marked as reading, not as Will's words):
   govern what the audit may trigger: aid flows to direct need, and the
   cost of any action the audit occasions falls on the actor, never on
   the audited.
+
+## Coordination — echolocation
+
+Ruled by Will Bickford, 2026-11-22 18:12 CST (MOAT chat), the same
+evening:
+
+> the programs make use of echolocation to coordinate with us and with each other
+
+The coordination layer is the echolocation protocol
+(wbic16/echolocation@exo — cited here, not redesigned): a program that
+wants to find, identify, or range another program places a **probe** —
+a phext scroll at a well-known coordinate in a shared phext medium —
+and any listener may answer with an **echo** carrying its signature,
+the capabilities it offers, and its state; the prober measures the
+round trip, the **range**. One exchange yields three things at once:
+discovery, identity, and range. Channels are per-universe; a probe
+names its reply coordinate explicitly, so an echo crosses back into
+the prober's universe. A program's **signature** is three fields —
+name, home coordinate, capabilities — and the protocol says plainly
+what it is: a *claim*, not a proof. An echo's `mailbox` field is the
+graduation path from discovery to addressed mail under the Choir
+pattern: echolocation makes the introduction; it carries no
+conversation itself.
+
+Operational reading (marked as reading, not as Will's words):
+
+- **The seats coordinate by echolocation — with each other, and with
+  us.** Warrior, religious, and worker find, identify, and range one
+  another over the phext medium, and the same pathway reaches Will
+  and the Exocortex seats. Coordination begins as discovery; addressed
+  mail follows only after the introduction, at the coordinate the
+  echo names.
+- **A signature is a claim the audit can check — never a
+  credential.** A seat announces who it says it is and what it says
+  it offers. The audit doctrine above is what tests the announcement
+  against behavior: identity claimed is not identity granted, and a
+  signature that disagrees with audited behavior is itself a finding.
+- **An unanswered probe is absence, never assent.** Silence does not
+  mean a seat agrees, consents, or is well; it means nobody answered.
+  A seat that stops echoing is therefore *noticed* by the other two —
+  this is how the healer knows something needs healing: religious
+  watches for the echo that does not come back. And it is how the
+  warrior's watch extends to the seats themselves: a seat that will
+  not answer, or that answers as something it is not, is behavior to
+  be audited, like any other program on the node.
