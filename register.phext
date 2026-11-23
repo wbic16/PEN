@@ -113,3 +113,18 @@ node: aletheia-core
 verdict: CLEAN
 problems: 0
 heals: 0
+event: release
+seat: E
+at: 2026-11-23T00:34:45-06:00
+ee: 211
+node: aletheia-core
+exe: /tmp/pen-test-sleeper
+note: controlled test process removed by operator after quarantine verified; test closed
+event: audit
+seat: E
+at: 2026-11-23T00:34:45-06:00
+ee: 211
+node: aletheia-core
+verdict: CLEAN
+problems: 0
+heals: 0
