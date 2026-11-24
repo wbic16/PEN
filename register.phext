@@ -1868,3 +1868,24 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 1
 heals: 1
+event: watch-cycle
+seat: P
+at: 2026-11-23T23:35:08-06:00
+ee: 408
+node: aletheia-core
+unexpected: 0
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-23T23:35:08-06:00
+ee: 408
+node: aletheia-core
+note: watch stale 3601s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-23T23:35:08-06:00
+ee: 408
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
