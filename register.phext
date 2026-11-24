@@ -2591,3 +2591,63 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 1
 heals: 1
+event: unexpected
+seat: P
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+user: wbic16
+pid: 1796370
+exe: /home/wbic16/telephone-lisp/sbcl-env/bin/sbcl
+comm: sbcl
+age_s: 4743.8
+state: R
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+user: wbic16
+pid: 2239313
+exe: /usr/bin/dash
+comm: sh
+age_s: 586.8
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+user: wbic16
+pid: 2239315
+exe: /home/wbic16/telephone-r/r-env/lib/R/bin/exec/R
+comm: R
+age_s: 586.8
+state: R
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: watch-cycle
+seat: P
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+unexpected: 3
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+note: watch stale 3600s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-24T13:35:12-06:00
+ee: 528
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
