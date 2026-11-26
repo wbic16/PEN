@@ -8077,3 +8077,37 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 1
 heals: 1
+event: unexpected
+seat: P
+at: 2026-11-26T04:35:25-06:00
+ee: 863
+node: aletheia-core
+user: wbic16
+pid: 1324078
+exe: /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+comm: java
+age_s: 117496.3
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: watch-cycle
+seat: P
+at: 2026-11-26T04:35:25-06:00
+ee: 863
+node: aletheia-core
+unexpected: 1
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-26T04:35:25-06:00
+ee: 863
+node: aletheia-core
+note: watch stale 3600s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-26T04:35:25-06:00
+ee: 863
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
