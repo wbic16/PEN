@@ -40746,3 +40746,63 @@ node: aletheia-core
 verdict: FINDINGS
 problems: 1
 heals: 1
+event: unexpected
+seat: P
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+user: wbic16
+pid: 1324078
+exe: /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+comm: java
+age_s: 304744.8
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+user: wbic16
+pid: 2619451
+exe: /usr/bin/grep
+comm: grep
+age_s: 1628.0
+state: D
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: unexpected
+seat: P
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+user: wbic16
+pid: 2749196
+exe: /usr/bin/sccache
+comm: sccache
+age_s: 633.4
+state: S
+action: record-only
+result: below quarantine age 999999999s or already stopped
+event: watch-cycle
+seat: P
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+unexpected: 3
+note: cycle complete
+event: heal
+seat: E
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+note: watch stale 3601s; audit ran a cycle: rc=0
+event: audit
+seat: E
+at: 2026-11-28T08:36:14-06:00
+ee: 1309
+node: aletheia-core
+verdict: FINDINGS
+problems: 1
+heals: 1
