@@ -1,1 +1,9 @@
-{"node":"aletheia-core","owner":"wbic16","quarantine_min_age_s":45,"repo":"/home/wbic16/PEN","terminate_exes":[],"watch_max_stale_s":900}
+{
+ "node": "aletheia-core",
+ "owner": "wbic16",
+ "quarantine_min_age_s": 999999999,
+ "repo": "/home/wbic16/PEN",
+ "terminate_exes": [],
+ "watch_max_stale_s": 900,
+ "standoff_note": "2026-11-23: quarantine arm stood down by operator after PEN froze two legitimate git clones (see register release events EE 217); watcher record-only until the multi-sample census fix lands."
+}
